@@ -9,5 +9,15 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
     }
+  },
+  // Optimize for static site generation
+  nitro: {
+    preset: 'static'
+  },
+  // Enable static site generation
+  ssr: true,
+  // Generate static pages
+  generate: {
+    routes: ['/']
   }
 })

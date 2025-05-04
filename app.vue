@@ -49,7 +49,7 @@
 
 .dark {
   --text: #f5f5f5;
-  --background: #1a1a1a;
+  --background: #000000;
 }
 
 body {

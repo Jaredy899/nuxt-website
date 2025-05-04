@@ -1,0 +1,12 @@
+services:
+  nuxt-website:
+    container_name: nuxt-website
+    image: ghcr.io/jaredy899/nuxt-website:latest
+    ports:
+      - "80:80" 
+    restart: unless-stopped
+    # environment:
+    #   - NODE_ENV=production
+    #   - PORT=80
+    #   - HOST=0.0.0.0
+    #   - NUXT_TELEMETRY_DISABLED=1

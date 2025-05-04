@@ -1,0 +1,7 @@
+{
+  "name": "nuxt-website",
+  "compatibility_date": "2025-05-03",
+  "assets": {
+    "directory": ".output/public"
+  }
+} 

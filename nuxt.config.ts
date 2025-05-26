@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxt/content'],
   app: {
     head: {
       link: [
@@ -10,12 +10,18 @@ export default defineNuxtConfig({
       ]
     }
   },
-  // Optimize for static site generation
-  nitro: {
-    preset: 'static'
-  },
-  // Enable static site generation
+  // Enable SSR for content
   ssr: true,
+  content: {
+    // Content configuration
+    highlight: {
+      theme: 'github-dark'
+    },
+    // Ensure content is properly served
+    api: {
+      baseURL: '/api/_content'
+    }
+  },
   // Generate static pages
   generate: {
     routes: ['/']

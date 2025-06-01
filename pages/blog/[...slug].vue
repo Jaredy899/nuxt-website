@@ -148,12 +148,33 @@
   .blog-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 6rem 2rem 4rem;
+    padding: 6rem 1rem 4rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Tablet and desktop adjustments */
+  @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .blog-content {
+      padding-left: 5rem;
+      padding-right: 2rem;
+    }
+  
+    .post-meta {
+      margin-left: 0.5rem;
+    }
+  }
+  
+  /* Large desktop */
+  @media screen and (min-width: 1281px) {
+    .blog-content {
+      padding: 6rem 2rem 4rem;
+    }
   }
   
   .loading, .error {
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
     font-size: 1.2rem;
   }
   
@@ -196,7 +217,7 @@
   }
   
   .prose {
-    line-height: 1.7;
+    line-height: 1.8;
     font-size: 1.1rem;
     color: var(--text);
   }
@@ -230,7 +251,7 @@
   .prose :deep(ul), 
   .prose :deep(ol) {
     margin-bottom: 1.5rem;
-    padding-left: 2rem;
+    padding-left: 1.5rem;
   }
   
   .prose :deep(li) {
@@ -249,6 +270,29 @@
     border-radius: 0.25rem;
     font-size: 0.9em;
     color: var(--text);
+  }
+  
+  .prose :deep(pre) {
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .prose :deep(pre code) {
+    background: none;
+    padding: 0;
+    color: #fff;
+  }
+  
+  .prose :deep(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .prose :deep(blockquote) {
@@ -286,11 +330,8 @@
     opacity: 0.7;
   }
   
-  @media (max-width: 768px) {
-    .blog-content {
-      padding: 6rem 1rem 4rem;
-    }
-    
+  /* Mobile adjustments */
+  @media (max-width: 767px) {
     .post-header h1 {
       font-size: 2rem;
     }
@@ -298,5 +339,18 @@
     .post-meta {
       flex-direction: column;
     }
+  }
+  
+  /* Dark mode */
+  :global(.dark) .prose :deep(code) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  :global(.dark) .prose :deep(pre) {
+    background: #2a2a2a;
+  }
+  
+  :global(.dark) .prose :deep(img) {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
   }
   </style>

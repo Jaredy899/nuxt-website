@@ -24,7 +24,7 @@ This post itself is written in Markdown.
 
 Here are some of the key ingredients that went into making this blog:
 
-* **Astro:** The framework powering the whole thing. I'm really impressed with how fast and easy it is to work with.
+* **Nuxt:** The framework powering the whole thing. I'm really impressed with how fast and easy it is to work with.
 * **Markdown:** For writing all the content (like this post!). It's so simple and effective.
 * **View Transitions:** To create those smooth animations when you click between pages. It's a really nice touch!
 * **Custom Styling:** I've added some personal touches to the design to make it my own.

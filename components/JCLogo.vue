@@ -1,24 +1,24 @@
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 700 419"
-    :class="className"
-    width="150"
-    height="150"
-  >
-    <g>
-      <path
-        class="letter j"
-        aria-label="J"
-        d="M335 0H290V334.06C290 354.821 273.018 371.797 252.25 371.797H150V416.797H252.25C298.027 416.797 335 379.775 335 334.06V0Z"
-      />
-      <path
-        class="letter c"
-        aria-label="C"
-        d="M350 82.7372C350 37.0217 387.027 0 432.75 0H575V45H432.75C411.988 45 395.006 61.9759 395.006 82.7372V334.06C395.006 354.821 411.988 371.797 432.75 371.797H575V416.797H432.75C387.027 416.797 350 379.775 350 334.06V82.7372Z"
-      />
-    </g>
-  </svg>
+ <svg
+	 xmlns="http://www.w3.org/2000/svg"
+	 viewBox="0 0 600 419"
+	 class={className}
+	 width="100"
+	 height="100"
+ >
+	 <g>
+		 <path
+			 class="letter j"
+			 aria-label="J"
+			 d="M285 0H240V334.06C240 354.821 223.018 371.797 202.25 371.797H100V416.797H202.25C248.027 416.797 285 379.775 285 334.06V0Z"
+		 />
+		 <path
+			 class="letter c"
+			 aria-label="C"
+			 d="M300 82.7372C300 37.0217 337.027 0 382.75 0H525V45H382.75C361.988 45 345.006 61.9759 345.006 82.7372V334.06C345.006 354.821 361.988 371.797 382.75 371.797H525V416.797H382.75C337.027 416.797 300 379.775 300 334.06V82.7372Z"
+		 />
+ 	 </g>
+ </svg>
 </template>
 
 <script setup lang="ts">
@@ -52,11 +52,11 @@ svg {
 }
 
 svg:hover .j {
-  transform: translateX(-25px) scale(1.3);
+  transform: translateX(-15px) scale(1.2);
 }
 
 svg:hover .c {
-  transform: translateX(25px) scale(1.3);
+  transform: translateX(15px) scale(1.2);
 }
 
 @media (max-width: 768px) {

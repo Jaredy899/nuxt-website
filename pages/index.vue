@@ -71,7 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 0;
+    padding-top: 7rem;
     padding-bottom: 4rem;
   }
   
@@ -79,7 +79,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: -4rem;
   }
   

@@ -12,7 +12,7 @@
       
       <main>
         <div class="content">
-          <div class="logo-container">
+          <div class="logo-container" style="view-transition-name: jc-logo;">
             <JCLogo />
           </div>
           <a

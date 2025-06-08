@@ -5,8 +5,13 @@
         <meta name="description" :content="pageDescription">
       </Head>
       
-      <header class="page-header">
+      <header class="page-header" :class="{ 'header-hidden': !headerVisible }">
         <SidebarToggle @toggle="toggleSidebar" />
+        <div class="logo-container" style="view-transition-name: jc-logo;">
+          <NuxtLink to="/" class="logo-link" aria-label="Return to home page">
+            <JCLogo />
+          </NuxtLink>
+        </div>
         <ThemeToggle />
       </header>
   
@@ -63,6 +68,8 @@
   const blogPost = ref<BlogPost | null>(null)
   const isLoading = ref(true)
   const hasError = ref(false)
+  const headerVisible = ref(true)
+  const lastScrollY = ref(0)
   
   // Computed properties for meta tags
   const pageTitle = computed(() => {
@@ -103,6 +110,33 @@
   const closeSidebar = () => {
     sidebarOpen.value = false
   }
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY
+    
+    if (currentScrollY < 100) {
+      // Always show header when near the top
+      headerVisible.value = true
+    } else if (currentScrollY > lastScrollY.value) {
+      // Scrolling down - hide header
+      headerVisible.value = false
+    } else {
+      // Scrolling up - show header
+      headerVisible.value = true
+    }
+    
+    lastScrollY.value = currentScrollY
+  }
+
+  // Add scroll listener on mount
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true })
+  })
+
+  // Remove scroll listener on unmount
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+  })
   
   const getDateTimeString = (dateInput?: string | Date): string => {
     if (!dateInput) return ''
@@ -174,6 +208,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease;
+  }
+
+  .page-header.header-hidden {
+    transform: translateY(-100%);
+  }
+
+  .page-header .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    color: var(--text);
+  }
+
+  .page-header .logo-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .page-header .logo-link:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
   
   .blog-content {

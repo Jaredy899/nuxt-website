@@ -22,7 +22,7 @@
           <header class="post-header">
             <h1>{{ blogPost.title }}</h1>
             <div class="post-meta">
-              <time :datetime="blogPost.date">{{ formatDate(blogPost.date) }}</time>
+              <time :datetime="getDateTimeString(blogPost.date)">{{ formatDate(blogPost.date) }}</time>
               <div v-if="blogPost.tags && Array.isArray(blogPost.tags) && blogPost.tags.length > 0" class="tags">
                 <span v-for="tag in blogPost.tags" :key="tag" class="tag">{{ tag }}</span>
               </div>
@@ -52,7 +52,7 @@
   
   interface BlogPost {
     title?: string
-    date?: string
+    date?: string | Date
     description?: string
     tags?: string[]
     [key: string]: any
@@ -73,40 +73,27 @@
     return blogPost.value?.description || 'Blog post by Jared Cervantes'
   })
   
-  // Load the blog post
-  onMounted(async () => {
-    try {
-      console.log('Loading blog post for path:', route.path)
-      isLoading.value = true
-      hasError.value = false
-      
-      const post = await queryContent(route.path).findOne()
-      blogPost.value = post as BlogPost
-      
-    } catch (error) {
-      console.error('Error loading blog post:', error)
-      hasError.value = true
-    } finally {
-      isLoading.value = false
-    }
+  // Load the blog post using useAsyncData for better SSR support
+  const { data: post, error, pending } = await useAsyncData(`blog-post-${route.path}`, () => 
+    queryContent(route.path).findOne()
+  )
+  
+  // Set reactive values based on the async data
+  blogPost.value = post.value as BlogPost
+  isLoading.value = pending.value
+  hasError.value = !!error.value
+  
+  // Watch for changes in the async data
+  watch(post, (newPost) => {
+    blogPost.value = newPost as BlogPost
   })
   
-  // Watch for route changes
-  watch(() => route.path, async (newPath) => {
-    try {
-      console.log('Route changed to:', newPath)
-      isLoading.value = true
-      hasError.value = false
-      
-      const post = await queryContent(newPath).findOne()
-      blogPost.value = post as BlogPost
-      
-    } catch (error) {
-      console.error('Error loading blog post on route change:', error)
-      hasError.value = true
-    } finally {
-      isLoading.value = false
-    }
+  watch(pending, (newPending) => {
+    isLoading.value = newPending
+  })
+  
+  watch(error, (newError) => {
+    hasError.value = !!newError
   })
   
   const toggleSidebar = () => {
@@ -117,9 +104,53 @@
     sidebarOpen.value = false
   }
   
-  const formatDate = (dateString?: string) => {
-    if (!dateString) return ''
-    return new Date(dateString).toLocaleDateString('en-US', {
+  const getDateTimeString = (dateInput?: string | Date): string => {
+    if (!dateInput) return ''
+    
+    // If it's already a date-only string in YYYY-MM-DD format, return it as-is
+    if (typeof dateInput === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dateInput)) {
+      return dateInput
+    }
+    
+    let date: Date
+    if (dateInput instanceof Date) {
+      date = dateInput
+    } else {
+      date = new Date(dateInput)
+    }
+    
+    // Check if date is valid
+    if (isNaN(date.getTime())) {
+      return ''
+    }
+    
+    return date.toISOString().split('T')[0] // Returns YYYY-MM-DD format
+  }
+
+  const formatDate = (dateInput?: string | Date) => {
+    if (!dateInput) return ''
+    
+    let date: Date
+    if (dateInput instanceof Date) {
+      date = dateInput
+    } else {
+      // Handle date-only strings (YYYY-MM-DD) to avoid timezone issues
+      if (typeof dateInput === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dateInput)) {
+        // For date-only strings, create date in local timezone to avoid UTC conversion
+        const [year, month, day] = dateInput.split('-').map(Number)
+        date = new Date(year, month - 1, day) // month is 0-indexed
+      } else {
+        date = new Date(dateInput)
+      }
+    }
+    
+    // Check if date is valid
+    if (isNaN(date.getTime())) {
+      console.error('Invalid date:', dateInput)
+      return ''
+    }
+    
+    return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'

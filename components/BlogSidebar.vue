@@ -38,7 +38,7 @@
     _path: string
     title?: string
     description?: string
-    date?: string
+    date?: string | Date
     published?: boolean
     [key: string]: any
   }
@@ -116,9 +116,30 @@
     emit('close')
   }
   
-  const formatDate = (dateString?: string) => {
-    if (!dateString) return ''
-    return new Date(dateString).toLocaleDateString('en-US', {
+  const formatDate = (dateInput?: string | Date) => {
+    if (!dateInput) return ''
+    
+    let date: Date
+    if (dateInput instanceof Date) {
+      date = dateInput
+    } else {
+      // Handle date-only strings (YYYY-MM-DD) to avoid timezone issues
+      if (typeof dateInput === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dateInput)) {
+        // For date-only strings, create date in local timezone to avoid UTC conversion
+        const [year, month, day] = dateInput.split('-').map(Number)
+        date = new Date(year, month - 1, day) // month is 0-indexed
+      } else {
+        date = new Date(dateInput)
+      }
+    }
+    
+    // Check if date is valid
+    if (isNaN(date.getTime())) {
+      console.error('Invalid date:', dateInput)
+      return ''
+    }
+    
+    return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'

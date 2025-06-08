@@ -15,7 +15,8 @@ export default defineNuxtConfig({
   content: {
     // Content configuration
     highlight: {
-      theme: 'github-dark'
+      theme: 'github-dark',
+      langs: ['js', 'jsx', 'json', 'ts', 'tsx', 'vue', 'css', 'html', 'bash', 'md', 'mdc', 'yaml', 'powershell']
     },
     // Ensure content is properly served
     api: {

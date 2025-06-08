@@ -229,7 +229,7 @@ onMounted(() => {
 
 /* Dark mode styling - matches Astro exactly */
 .dark .code-block-wrapper pre {
-  background: #2a2a2a !important; /* Lighter dark background in dark mode */
+  background: #1a1a1a !important; /* Lighter dark background in dark mode */
 }
 
 .dark .code-block-wrapper code {

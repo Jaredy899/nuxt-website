@@ -295,7 +295,8 @@
     font-weight: 600;
   }
   
-  .prose :deep(code) {
+  /* Inline code styling (not in pre blocks) */
+  .prose :deep(code:not(pre code)) {
     background-color: rgba(128, 128, 128, 0.2);
     padding: 0.2rem 0.4rem;
     border-radius: 0.25rem;
@@ -303,19 +304,7 @@
     color: var(--text);
   }
   
-  .prose :deep(pre) {
-    background: #1a1a1a;
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-  }
-  
-  .prose :deep(pre code) {
-    background: none;
-    padding: 0;
-    color: #fff;
-  }
+  /* Let CopyButtonScript.vue handle all pre and pre code styling */
   
   .prose :deep(img) {
     max-width: 100%;
@@ -373,12 +362,8 @@
   }
   
   /* Dark mode */
-  :global(.dark) .prose :deep(code) {
+  :global(.dark) .prose :deep(code:not(pre code)) {
     background: rgba(255, 255, 255, 0.1);
-  }
-  
-  :global(.dark) .prose :deep(pre) {
-    background: #2a2a2a;
   }
   
   :global(.dark) .prose :deep(img) {

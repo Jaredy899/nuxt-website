@@ -1,9 +1,11 @@
 ---
-title: "Captain Picard"
-description: "My thoughts about Captain Picard."
-date: "2025-05-25"
-published: true
+title: "Star Trek"
+description: "Why Star Trek is the best sci-fi franchise"
+pubDate: 2025-05-26
+draft: false
 ---
+
+# 🖖🏽 Why Star Trek is the Greatest Sci-Fi Franchise
 
 ## Make it So: How Picard Shaped My Worldview
 

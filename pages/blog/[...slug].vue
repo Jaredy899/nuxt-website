@@ -27,7 +27,7 @@
           <header class="post-header">
             <h1>{{ blogPost.title }}</h1>
             <div class="post-meta">
-              <time :datetime="getDateTimeString(blogPost.date)">{{ formatDate(blogPost.date) }}</time>
+              <time :datetime="getDateTimeString(blogPost.pubDate || blogPost.date)">{{ formatDate(blogPost.pubDate || blogPost.date) }}</time>
               <div v-if="blogPost.tags && Array.isArray(blogPost.tags) && blogPost.tags.length > 0" class="tags">
                 <span v-for="tag in blogPost.tags" :key="tag" class="tag">{{ tag }}</span>
               </div>

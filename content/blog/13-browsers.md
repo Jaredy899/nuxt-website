@@ -1,8 +1,8 @@
 ---
 title: "The Endless Quest for the Perfect Browser: A Chronicle"
 description: "My ongoing search for the ideal web browser."
-date: "2025-08-10"
-published: false
+pubDate: 2025-08-10
+draft: true
 ---
 
 ## The Endless Quest for the Perfect Browser: A Chronicle
@@ -135,8 +135,8 @@ gracefully opens when moving the mouse** towards it adds a touch of fluid
 interactivity that feels genuinely intuitive. These seemingly small details
 contribute to a surprisingly refined and enjoyable browsing experience.
 
-Zen, at its core, feels purpose-built and focused. It’s early days, but the
-initial experience has been remarkably positive. It’s a testament to how a true
+Zen, at its core, feels purpose-built and focused. It's early days, but the
+initial experience has been remarkably positive. It's a testament to how a true
 open-source spirit, combined with thoughtful design and useful features, can
 profoundly impact a user's choice.
 
@@ -163,7 +163,7 @@ it a viable option for those seeking a more private browsing experience once it'
 customized to strip out the Web3 bloat.**
 
 Brave, once its Web3 features are toned down and it's configured to my liking,
-delivers a remarkably efficient and focused browsing experience. It’s a
+delivers a remarkably efficient and focused browsing experience. It's a
 testament to how a strong focus on privacy, combined with thoughtful design and
 useful features, can profoundly impact a user's choice, even when a bit of initial
 customization is required.

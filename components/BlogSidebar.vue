@@ -23,7 +23,7 @@
             <li v-for="post in posts" :key="post._path">
               <NuxtLink :to="post._path" @click="closeSidebar" class="post-link">
                 <div class="post-title">{{ post.title }}</div>
-                <div class="post-date">{{ formatDate(post.date) }}</div>
+                <div class="post-date">{{ formatDate(post.pubDate || post.date) }}</div>
                 <div class="post-description">{{ post.description }}</div>
               </NuxtLink>
             </li>
@@ -39,7 +39,9 @@
     title?: string
     description?: string
     date?: string | Date
+    pubDate?: string | Date
     published?: boolean
+    draft?: boolean
     [key: string]: any
   }
   
@@ -72,17 +74,23 @@
       // Filter and process the content
       const validBlogPosts: BlogPost[] = blogContent
         .filter((content: any) => {
+          const dateField = content.pubDate || content.date
+          // Only show posts that are explicitly not drafts OR explicitly published
+          const isPublished = (content.draft === false) || (content.published === true)
           const isValid = content &&
                  content._path &&
                  content.title &&
                  content.description &&
-                 content.date &&
+                 dateField &&
                  content._path.startsWith('/blog/') &&
-                 content.published !== false
+                 isPublished
           
           console.log('Content validation:', { 
             path: content._path, 
-            title: content.title, 
+            title: content.title,
+            draft: content.draft,
+            published: content.published,
+            isPublished,
             isValid 
           })
           
@@ -93,12 +101,16 @@
           title: content.title,
           description: content.description,
           date: content.date,
+          pubDate: content.pubDate,
           published: content.published !== false,
+          draft: content.draft,
           ...content
         } as BlogPost))
         .sort((a, b) => {
-          if (!a.date || !b.date) return 0
-          return new Date(b.date).getTime() - new Date(a.date).getTime()
+          const aDate = a.pubDate || a.date
+          const bDate = b.pubDate || b.date
+          if (!aDate || !bDate) return 0
+          return new Date(bDate).getTime() - new Date(aDate).getTime()
         })
       
       posts.value = validBlogPosts

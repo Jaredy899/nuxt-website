@@ -19,11 +19,15 @@ export default defineNuxtConfig({
     // Content configuration
     highlight: {
       theme: 'github-dark',
-      langs: ['js', 'jsx', 'json', 'ts', 'tsx', 'vue', 'css', 'html', 'bash', 'md', 'mdc', 'yaml', 'powershell']
+      langs: ['js', 'jsx', 'json', 'ts', 'tsx', 'vue', 'css', 'html', 'bash', 'md', 'mdc', 'mdx', 'yaml', 'powershell']
     },
     // Ensure content is properly served
     api: {
       baseURL: '/api/_content'
+    },
+    // Enable MDX support
+    markdown: {
+      mdc: true
     }
   },
   // Generate static pages

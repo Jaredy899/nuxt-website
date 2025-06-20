@@ -33,5 +33,11 @@ export default defineNuxtConfig({
   // Generate static pages
   generate: {
     routes: ['/']
+  },
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
   }
 })

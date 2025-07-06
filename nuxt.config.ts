@@ -19,15 +19,20 @@ export default defineNuxtConfig({
     // Content configuration
     highlight: {
       theme: 'github-dark',
-      langs: ['js', 'jsx', 'json', 'ts', 'tsx', 'vue', 'css', 'html', 'bash', 'md', 'mdc', 'mdx', 'yaml', 'powershell']
+      langs: ['js', 'jsx', 'json', 'ts', 'tsx', 'vue', 'css', 'html', 'bash', 'md', 'yaml', 'powershell']
     },
     // Ensure content is properly served
     api: {
       baseURL: '/api/_content'
     },
-    // Enable MDX support
+    // Enable Markdown support with HTML
     markdown: {
-      mdc: true
+      toc: {
+        depth: 3,
+        searchDepth: 3
+      },
+      remarkPlugins: [],
+      rehypePlugins: []
     }
   },
   // Generate static pages

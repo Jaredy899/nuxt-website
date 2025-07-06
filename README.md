@@ -1,6 +1,6 @@
 # Nuxt Website
 
-A Nuxt 3 website with MDX support for interactive content.
+A Nuxt 3 website with Markdown support for content management.
 
 ## Setup
 
@@ -29,6 +29,7 @@ pnpm build
 ## Features
 
 - ✅ Nuxt 3
-- ✅ MDX support
+- ✅ Markdown support with HTML
 - ✅ Content management
 - ✅ Syntax highlighting
+- ✅ View transitions

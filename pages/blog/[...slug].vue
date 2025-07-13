@@ -395,6 +395,11 @@
     opacity: 0.7;
   }
   
+  .prose :deep(svg) {
+    color: var(--text);
+    fill: currentColor;
+  }
+  
   .post-footer {
     margin-top: 4rem;
     padding-top: 2rem;

@@ -8,41 +8,37 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title: 'Jared Cervantes',
+      meta: [
+        { name: 'description', content: 'Personal website of Jared Cervantes' },
+        { name: 'theme-color', content: '#333' }
+      ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
       ]
     }
   },
-  // Enable SSR for content
   ssr: true,
   content: {
-    // Content configuration
     highlight: {
       theme: 'github-dark',
       langs: ['js', 'jsx', 'json', 'ts', 'tsx', 'vue', 'css', 'html', 'bash', 'md', 'yaml', 'powershell']
     },
-    // Ensure content is properly served
-    api: {
-      baseURL: '/api/_content'
-    },
-    // Enable Markdown support with HTML
     markdown: {
-      toc: {
-        depth: 3,
-        searchDepth: 3
-      },
-      remarkPlugins: [],
-      rehypePlugins: []
+      toc: { depth: 3, searchDepth: 3 }
     }
   },
-  // Generate static pages
-  generate: {
-    routes: ['/']
+  routeRules: {
+    '/**': { prerender: true },
+    '/api/**': { prerender: false }
   },
   nitro: {
     prerender: {
       routes: ['/'],
-      crawlLinks: true
+      crawlLinks: true,
+      ignore: ['/api/**', '/_payload.json*']
     }
   }
 })

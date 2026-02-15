@@ -1,14 +1,11 @@
+<script setup>
+useHead({
+  htmlAttrs: { class: 'dark' }
+})
+</script>
+
 <template>
   <div>
-    <Head>
-      <title>Jared Cervantes</title>
-      <meta name="description" content="Personal website of Jared Cervantes">
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-      <link rel="icon" type="image/png" href="/favicon.png">
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-      <meta name="theme-color" content="#333">
-    </Head>
-    
     <NuxtPage />
   </div>
 </template>

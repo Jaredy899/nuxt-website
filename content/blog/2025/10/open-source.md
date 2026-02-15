@@ -7,7 +7,7 @@ draft: false
 
 # Open Source
 
-Over the past few months, I’ve been diving deep into the world of open source by contributing to [Linutil](https://github.com/ChrisTitusTech/linutil.git), a project by Chris Titus Tech, as well as other projects. This experience has been a fantastic way to learn not just about the code itself, but also about the tools and workflows that make open source possible.
+Over the past few months, I’ve been diving deep into the world of open source by contributing to Linutil, a project by Chris Titus Tech, as well as other projects. This experience has been a fantastic way to learn not just about the code itself, but also about the tools and workflows that make open source possible.
 
 ## Why I Love Open Source
 
@@ -26,17 +26,17 @@ It’s been a bit intimidating at times, but seeing my contributions merged into
 
 ## Using Git for My Own Projects
 
-I’ve also started using Git more seriously for my own web projects. Whether I’m building a blog in [Astro](https://jaredcervantes.com), [Nuxt](https://nuxt.jaredcervantes.com), [Next.js](https://next.jaredcervantes.com), [Hugo](https://hugo.jaredcervantes.com), or [Svelte](https://svelte.jaredcervantes.com), version control has become an essential part of my workflow. It’s made it so much easier to experiment, track changes, and roll back when things go wrong (in my [previous blog](/blog/astro) about my blog... I discussed that from now on, I'll be using Astro just to keep things simple!).
+I’ve also started using Git more seriously for my own web projects. Whether I’m building a blog in Astro, Nuxt, Next.js, Hugo, or Svelte, version control has become an essential part of my workflow. It’s made it so much easier to experiment, track changes, and roll back when things go wrong (in my [previous blog](/blog/2025/08/astro) about my blog... I discussed that from now on, I'll be using Astro just to keep things simple!).
 
 ## Scripting and Linux Distros
 
 Another big part of contributing to linutil has been learning how to write and use scripts. I’ve been exploring different Linux distributions, testing scripts across environments, and making sure everything works as expected. So far, I’ve tested on **Debian, Ubuntu, Arch, Fedora, openSUSE, Solus, Void, Alpine, and NixOS**. Testing is a huge part of the process—sometimes it feels like I spend more time testing than coding! But it’s worth it to make sure the tools are reliable for everyone.
 
-My past [blog post](/blog/distros) shared my thoughts and experiences with each of these distros.
+My past [blog post](/blog/2025/09/distros) shared my thoughts and experiences with each of these distros.
 
 ## Tools That Help: Cursor and Beyond
 
-I use [Cursor](https://cursor.com) to help with some of the coding and navigation, but I’m also becoming more comfortable reading code directly. I’m starting to get a feel for what “good” code looks like, and I’m learning to spot things that don’t quite fit—even if I can’t always explain why at first.
+I use Cursor to help with some of the coding and navigation, but I’m also becoming more comfortable reading code directly. I’m starting to get a feel for what “good” code looks like, and I’m learning to spot things that don’t quite fit—even if I can’t always explain why at first.
 
 One thing I’ve noticed is that “vibe coding”—just going with what feels right—can lead to mistakes. It’s easy to overlook edge cases or miss best practices if you’re not careful. I’m learning to slow down, review my work, and rely on testing and feedback from others.
 

@@ -11,7 +11,7 @@ draft: false
 
 > “The true test of a free society is not how it treats its friends, but how it treats those it fears.”*
 
-Star Trek: The Next Generation has always been more than just a sci-fi show; it’s a mirror held up to our own world. Few episodes reflect that mirror more clearly than Season 4’s *[The Drumhead](https://memory-alpha.fandom.com/wiki/The_Drumhead_(episode))* — a story about how fear, once unleashed, can corrode justice from the inside out.
+Star Trek: The Next Generation has always been more than just a sci-fi show; it’s a mirror held up to our own world. Few episodes reflect that mirror more clearly than Season 4’s *[The Drumhead](<https://memory-alpha.fandom.com/wiki/The_Drumhead_(episode)>)* — a story about how fear, once unleashed, can corrode justice from the inside out.
 
 ---
 

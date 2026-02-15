@@ -144,7 +144,7 @@ Reducing scope made the code easier to reason about and easier to change.
 
 Even though Windows support was removed from OSutil, Windows automation itself isn’t going away.
 
-Instead of forcing OSutil to work in an environment it isn’t well suited for, I’m planning to lean more heavily into **PowerShell** and make my existing Windows setup script more capable and more polished. This builds on ideas I’ve already talked about in [a previous post](/blog/my-windows-setup).
+Instead of forcing OSutil to work in an environment it isn’t well suited for, I’m planning to lean more heavily into **PowerShell** and make my existing Windows setup script more capable and more polished. This builds on ideas I’ve already talked about in [a previous post](/blog/2025/06/my-windows-setup).
 
 Keeping Windows tooling native and Unix tooling native avoids awkward abstractions and lets each platform play to its strengths.
 

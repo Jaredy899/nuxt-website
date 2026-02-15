@@ -31,4 +31,10 @@ For *this* website though, I wanted more of a real app: shared layouts, view tra
 
 The content is still markdown in `content/`. The URLs and structure can stay the same. The main change is the engine: Nuxt and Vue instead of Astro. So it’s less “throw everything away” and more “swap the foundation and keep writing.”
 
+I also added a small script to create new posts, similar to Hugo’s `hugo new`: it drops a new markdown file in `content/blog/YYYY/MM/` with frontmatter and opens it in my editor.
+
+```bash
+bun run post blog "My New Blog"
+```
+
 If you’re choosing between Astro and Nuxt today: Astro is still great when you want a minimal, HTML-centric site. Nuxt is great when you want a full framework and are happy with Vue. I’m on Nuxt for this one—at least until the next rebuild.

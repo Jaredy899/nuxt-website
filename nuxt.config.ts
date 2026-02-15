@@ -31,12 +31,14 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/**': { prerender: true }
+    '/**': { prerender: true },
+    '/api/**': { prerender: false }
   },
   nitro: {
     prerender: {
       routes: ['/'],
-      crawlLinks: true
+      crawlLinks: true,
+      ignore: ['/api/**', '/_payload.json*']
     }
   }
 })

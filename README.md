@@ -1,35 +1,5 @@
-# Nuxt Website
+# My website
 
-A Nuxt 3 website with Markdown support for content management.
+![logo](public/favicon.svg)
 
-## Setup
-
-Install dependencies:
-
-```bash
-pnpm install
-```
-
-## Development
-
-Start the development server:
-
-```bash
-pnpm dev
-```
-
-## Production
-
-Build for production:
-
-```bash
-pnpm build
-```
-
-## Features
-
-- ✅ Nuxt 3
-- ✅ Markdown support with HTML
-- ✅ Content management
-- ✅ Syntax highlighting
-- ✅ View transitions
+Static build: `bun run generate` → deploy `.output/public`

@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "post": "node scripts/new-post.js",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

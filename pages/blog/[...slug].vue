@@ -46,14 +46,10 @@
       </main>
   
       <BlogSidebar :is-open="sidebarOpen" @close="closeSidebar" />
-      
-      <!-- Copy Button Script Component -->
-      <CopyButtonScript />
     </div>
   </template>
   
   <script setup lang="ts">
-  import CopyButtonScript from '~/components/CopyButtonScript.vue'
   
   interface BlogPost {
     title?: string
@@ -366,7 +362,7 @@
     color: var(--text);
   }
   
-  /* Let CopyButtonScript.vue handle all pre and pre code styling */
+  /* ProsePre (components/content/ProsePre.vue) handles code block + copy button styling */
   
   .prose :deep(img) {
     max-width: 100%;

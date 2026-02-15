@@ -55,73 +55,44 @@
     close: []
   }>()
   
-  // Use reactive refs for loading state
-  const posts = ref<BlogPost[]>([])
-  const isLoading = ref(true)
-  const loadError = ref(false)
-  
-  // Load posts on component mount
-  onMounted(async () => {
-    try {
-      isLoading.value = true
-      loadError.value = false
-      
-      // Get blog posts
-      const blogContent = await queryContent('/blog').find()
-      
-      console.log('Raw blog content:', blogContent)
-      
-      // Filter and process the content
-      const validBlogPosts: BlogPost[] = blogContent
-        .filter((content: any) => {
-          const dateField = content.pubDate || content.date
-          // Only show posts that are explicitly not drafts OR explicitly published
-          const isPublished = (content.draft === false) || (content.published === true)
-          const isValid = content &&
-                 content._path &&
-                 content.title &&
-                 content.description &&
-                 dateField &&
-                 content._path.startsWith('/blog/') &&
-                 isPublished
-          
-          console.log('Content validation:', { 
-            path: content._path, 
-            title: content.title,
-            draft: content.draft,
-            published: content.published,
-            isPublished,
-            isValid 
-          })
-          
-          return isValid
-        })
-        .map((content: any) => ({
-          _path: content._path,
-          title: content.title,
-          description: content.description,
-          date: content.date,
-          pubDate: content.pubDate,
-          published: content.published !== false,
-          draft: content.draft,
-          ...content
-        } as BlogPost))
-        .sort((a, b) => {
-          const aDate = a.pubDate || a.date
-          const bDate = b.pubDate || b.date
-          if (!aDate || !bDate) return 0
-          return new Date(bDate).getTime() - new Date(aDate).getTime()
-        })
-      
-      posts.value = validBlogPosts
-      console.log('Final processed posts:', posts.value)
-      
-    } catch (error) {
-      console.error('Error loading blog posts:', error)
-      loadError.value = true
-    } finally {
-      isLoading.value = false
-    }
+  // Load posts at build/SSR time so the static site has the list (no runtime API)
+  const { data: blogContent, error } = await useAsyncData('blog-sidebar-posts', () =>
+    queryContent('/blog').find()
+  )
+
+  const isLoading = computed(() => !blogContent.value && !error.value)
+  const loadError = computed(() => !!error.value)
+
+  const posts = computed<BlogPost[]>(() => {
+    const raw = blogContent.value
+    if (!raw || !Array.isArray(raw)) return []
+    return raw
+      .filter((content: any) => {
+        const dateField = content.pubDate || content.date
+        const isPublished = (content.draft === false) || (content.published === true)
+        return content &&
+          content._path &&
+          content.title &&
+          dateField &&
+          content._path.startsWith('/blog/') &&
+          isPublished
+      })
+      .map((content: any) => ({
+        _path: content._path,
+        title: content.title,
+        description: content.description,
+        date: content.date,
+        pubDate: content.pubDate,
+        published: content.published !== false,
+        draft: content.draft,
+        ...content
+      } as BlogPost))
+      .sort((a, b) => {
+        const aDate = a.pubDate || a.date
+        const bDate = b.pubDate || b.date
+        if (!aDate || !bDate) return 0
+        return new Date(bDate).getTime() - new Date(aDate).getTime()
+      })
   })
   
   const closeSidebar = () => {

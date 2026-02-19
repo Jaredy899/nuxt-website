@@ -1,4 +1,7 @@
 <script setup>
+import { Analytics } from '@vercel/analytics/nuxt'
+import { SpeedInsights } from '@vercel/speed-insights/nuxt'
+
 useHead({
   htmlAttrs: { class: 'dark' }
 })
@@ -6,6 +9,8 @@ useHead({
 
 <template>
   <div>
+    <Analytics />
+    <SpeedInsights />
     <NuxtPage />
   </div>
 </template>

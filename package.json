@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "post": "node scripts/new-post.js",
+    "post": "bun scripts/new-post.js",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -19,5 +19,9 @@
     "nuxt": "^3.21.1",
     "vue": "^3.5.28",
     "vue-router": "^4.6.4"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/speed-insights": "^1.3.1"
   }
 }

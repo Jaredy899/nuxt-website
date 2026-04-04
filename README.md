@@ -1,5 +1,1 @@
-# My website
-
-![logo](public/favicon.svg)
-
-Static build: `bun run generate` → deploy `.output/public`
+This repo is my personal site, a static Nuxt blog with markdown content.

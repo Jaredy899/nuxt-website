@@ -35,6 +35,8 @@ Not everything on the schedule felt like a rerun. One session that landed for me
 
 ## Kansas City
 
+![Kansas City, 2026](https://qmpdliftraf4pov3.public.blob.vercel-storage.com/kc2026.webp)
+
 [Kansas City](https://www.visitkc.com/) is a strange place. The streets weren’t crowded; getting around was easy in a way big cities usually aren’t. It almost felt too quiet, like the bustle was somewhere else, or on pause.
 
 During the week, a lot closes early. After sessions, we’d look for something to do and hit a wall of locked doors and last-call hours. We’re not night-owl club people, but “find dinner or entertainment after eight” shouldn’t feel like a scavenger hunt. It did.

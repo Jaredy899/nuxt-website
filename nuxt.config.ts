@@ -1,7 +1,14 @@
+/// <reference types="node" />
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+  // `import.meta.dev` can still be true during `nuxt prepare` on Vercel; DevTools → mlly then breaks Bun installs.
+  devtools: {
+    enabled:
+      process.env.NODE_ENV === 'development' &&
+      process.env.VERCEL !== '1' &&
+      process.env.CI !== 'true'
+  },
   modules: ['@nuxt/eslint', '@nuxt/content'],
   experimental: {
     viewTransition: true
@@ -14,9 +21,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#333' }
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
     }
   },

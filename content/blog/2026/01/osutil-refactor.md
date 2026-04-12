@@ -3,10 +3,7 @@ title: "OSutil Refactor: Focusing on Linux and macOS"
 description: "Notes on refactoring OSutil and narrowing platform support to Linux and macOS"
 pubDate: 2026-01-26
 draft: false
-tags: ["osutil", "rust", "open-source", "refactoring"]
 ---
-
-# 🛠️ OSutil Refactor: Focusing on Linux and macOS
 
 Over the past few weeks, I’ve been doing a major refactor of **[OSutil](https://github.com/Jaredy899/osutil)**. What started as a cross-platform system utility targeting Windows, Linux, macOS, and FreeBSD has now been intentionally narrowed to **Linux-first with macOS support**.
 

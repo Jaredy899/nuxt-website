@@ -5,8 +5,6 @@ pubDate: 2026-02-15
 draft: false
 ---
 
-# Changing My Website Again
-
 So, about that “last time I’ll rebuild my blog” thing. Yeah. I’m back.
 
 Last year I wrote about [trying five different frameworks and finally sticking with Astro](/blog/2025/08/astro). I meant it at the time. Astro was simple, fast, and great for a content-first blog. But this site has evolved, and so has what I want from it. I’ve switched the stack to **Nuxt**, and for this particular project it’s been a better fit.

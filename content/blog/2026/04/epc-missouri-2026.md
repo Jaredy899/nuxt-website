@@ -5,8 +5,6 @@ pubDate: 2026-04-05
 draft: false
 ---
 
-# EPC Missouri 2026
-
 This was our **third year** at the [EPC Missouri](https://www.epcmissouri.org/) conference. I [wrote about the 2025 conference](/blog/2025/06/early-episode-psychosis) when the material was still new to us. A lot of the program felt familiar, and there was enough overlap with last year that it’s probably our last trip. That’s not a knock on the organizers; it’s just where we are. We’ve heard the talks, we’ve had the conversations, and repeating the same beats doesn’t add much for us anymore.
 
 Most of our **team** made it this year, which was a welcome diversion. I’m always happy to hang with them outside the office. We’re fairly close as it is, but a trip still means different conversations and a better sense of who people are away from the office.

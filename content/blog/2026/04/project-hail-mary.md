@@ -5,8 +5,6 @@ pubDate: 2026-04-12
 draft: false
 ---
 
-# Project Hail Mary
-
 I finally caught up with [**Project Hail Mary**](https://en.wikipedia.org/wiki/Project_Hail_Mary), [Andy Weir](https://en.wikipedia.org/wiki/Andy_Weir)’s 2021 novel about a lone astronaut, a dying Sun, and a problem too big for one species alone, after the [2026 film](https://en.wikipedia.org/wiki/Project_Hail_Mary_(film)) landed. The book is a brisk, confident read: clear stakes, tight problem-solving, and a voice that carries you even when the science gets dense. If parts of it felt *screen-ready* (scenes that break cleanly, dialogue that would read well in a trailer), that did not bother me much. The trade-off was a steady stream of small, satisfying details: how a tool behaves in zero g, the absurdity of improvising across incompatible biologies, the way panic and curiosity take turns at the controls.
 
 [![First edition cover of Project Hail Mary (2021)](https://upload.wikimedia.org/wikipedia/en/a/ad/Project_Hail_Mary%2C_First_Edition_Cover_%282021%29.jpg)](https://en.wikipedia.org/wiki/File:Project_Hail_Mary,_First_Edition_Cover_(2021).jpg)

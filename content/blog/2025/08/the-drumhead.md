@@ -5,8 +5,6 @@ pubDate: 2025-08-17
 draft: false
 ---
 
-# The Drumhead: A Cautionary Tale for Our Times
-
 ![Picard in interrogation room](https://qmpdliftraf4pov3.public.blob.vercel-storage.com/Picard_in_interrogation_room-yNYq91n3Ne3pGgq6YAW7ajyAYXrIWd.webp)
 
 > “The true test of a free society is not how it treats its friends, but how it treats those it fears.”*

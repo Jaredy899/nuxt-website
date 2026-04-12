@@ -5,8 +5,6 @@ pubDate: 2025-09-28
 draft: false
 ---
 
-# Why I Love the Long Way Series
-
 ## The Call of the Open Road
 
 There’s something magical about the idea of riding a motorcycle around the world. The open road, the ever-changing landscapes, the thrill of the unknown, and the raw exposure to the elements—these are the things that have always called to me.

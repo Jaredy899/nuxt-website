@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+  // Avoid loading @nuxt/devtools on CI (Bun/Vercel can break mlly resolution in postinstall).
+  devtools: { enabled: import.meta.dev },
   modules: ['@nuxt/eslint', '@nuxt/content'],
   experimental: {
     viewTransition: true
